@@ -4,16 +4,9 @@
 
 .App-header {
   background-color: #d7b81e;
-  font-size: calc(10px + 2vmin);
   margin: 1rem;
   border: 3px solid black;
-}
-
-.App-header h1 {
-  background-color: #d7871e;
-  margin-right: 1rem;
-  margin-left: 1rem;
-  border: 3px solid black;
+  border-radius: 5px;
 }
 
 .App-content {
@@ -21,12 +14,14 @@
   font-size: calc(1px + 2vmin);
   margin: 1rem;
   border: 3px solid black;
+  border-radius: 5px;
 }
 
 .App-content-header {
   background-color: #d7871e;
   margin: 1rem;
   border: 3px solid black;
+  border-radius: 5px;
 }
 
 .App-content-header input {
@@ -43,30 +38,29 @@
   border: 3px solid black;
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  border-radius: 5px;
 }
 
-.App-content-character div {
+.App-content-character > * {
   background-color: #d7591e;
   margin: 1rem;
   border: 3px solid black;
+  border-radius: 5px;
 }
 
 .App-content-character-pic {
-  height: 300px;
+  height: 25vh;
   width: 300px;
 }
 
 .App-content-character-info {
-  height: 500px;
+  height: 45vh;
   width: 300px;
 }
 
 .App-content-navigation {
   background-color: #d7871e;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  margin-right: 50rem;
-  margin-left: 50rem;
+  margin: 1rem;
   border: 3px solid black;
+  border-radius: 5px;
 }
