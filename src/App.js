@@ -3,18 +3,24 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 function App() {
+  const [sprite, setSprite] = useState("");
+  const [number, setNumber] = useState("");
   const [name, setName] = useState("");
   const [type, setType] = useState("");
-  const [sprite, setSprite] = useState("");
+  const [weight, setWeight] = useState("");
+  // const [abilities, setAbilities] = useState("");
+  // const [stats, setStats] = useState("");
 
   const fetchData = async () => {
-    const { data } = await axios.get(
-      "https://pokeapi.co/api/v2/pokemon/pikachu"
-    );
+    const { data } = await axios.get("https://pokeapi.co/api/v2/pokemon/6");
     console.log(data);
+    setSprite(data.sprites.other["official-artwork"].front_default);
+    // setSprite(data.sprites.other.home.front_default);
+    setNumber(data.id);
     setName(data.name);
     setType(data.types[0].type.name);
-    setSprite(data.sprites.front_default);
+    setWeight(data.weight);
+    console.log(data.types.length);
   };
 
   useEffect(() => {
@@ -23,12 +29,12 @@ function App() {
 
   return (
     <div className="App">
-      <div className="App-header">
+      <header className="App-header">
         <h1>Pokédex</h1>
-      </div>
+      </header>
       <div className="App-content">
         <div className="App-content-header">
-          <input placeholder="Name a character in a galaxy far far away..."></input>
+          <input placeholder="Who's that Pokémon!?"></input>
         </div>
         <div className="App-content-character">
           <div className="App-content-character-pic">
@@ -39,12 +45,16 @@ function App() {
             <table>
               <thead>
                 <tr>
+                  <th>Number</th>
                   <th>Name</th>
                   <th>Type</th>
+                  <th>Weight</th>
                 </tr>
                 <tr>
+                  <td>{number}</td>
                   <td>{name}</td>
                   <td>{type}</td>
+                  <td>{weight}</td>
                 </tr>
               </thead>
             </table>
