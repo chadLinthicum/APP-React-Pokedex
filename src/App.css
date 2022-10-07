@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  text-transform: capitalize;
 }
 
 .App-header {
@@ -46,6 +47,7 @@
   margin: 1rem;
   border: 3px solid black;
   border-radius: 5px;
+  width: 100%;
 }
 
 .App-content-character-pic {
@@ -58,25 +60,22 @@
   display: flex;
 }
 
-.App-content-character-info {
-  height: 45vh;
-  width: 300px;
-}
-
 .App-content-character-info table {
+  border-collapse: collapse;
+  margin: 0 auto;
   width: 10%;
   flex-wrap: wrap;
 }
 
 .App-content-character-info th {
-  border: 1px solid black;
+  border-bottom: 3px solid black;
   padding: 10px;
+  font-size: 13px;
 }
 
 .App-content-character-info td {
-  border: 1px solid black;
   padding: 5px;
-  text-transform: capitalize;
+  font-size: 13px;
 }
 
 .App-content-navigation {
@@ -84,4 +83,14 @@
   margin: 1rem;
   border: 3px solid black;
   border-radius: 5px;
+}
+
+#tenList {
+  margin: auto;
+  border-collapse: collapse;
+}
+
+#tenList th {
+  padding: 5px;
+  border-bottom: 3px solid black;
 }

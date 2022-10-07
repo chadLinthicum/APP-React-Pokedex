@@ -1,12 +1,11 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import PokeRow from "./components/PokeRow";
 
 function App() {
   const [sprite, setSprite] = useState("");
-  const [name, setName] = useState("");
   const [number, setNumber] = useState("");
+  const [name, setName] = useState("");
   const [type, setType] = useState("");
   const [weight, setWeight] = useState("");
   const [hp, setHP] = useState("");
@@ -32,8 +31,14 @@ function App() {
     }
   };
 
+  const Row = () => {
+    fetchData("https://pokeapi.co/api/v2/pokemon/4");
+    //This is over-riding the other for some reason
+    return <td>{name}</td>;
+  };
+
   useEffect(() => {
-    fetchData("https://pokeapi.co/api/v2/pokemon/51");
+    fetchData("https://pokeapi.co/api/v2/pokemon/50");
   }, []);
 
   return (
@@ -86,23 +91,17 @@ function App() {
             </table>
           </div>
         </div>
-        <table id="tenList">
+        <table>
           <thead>
             <tr>
               <th>Name</th>
               <th>Number</th>
               <th>Type</th>
               <th>Weight</th>
-              <th>HP</th>
-              <th>Attack</th>
-              <th>Defense</th>
-              <th>Speed</th>
             </tr>
-            <>
-              <PokeRow pokemon={"https://pokeapi.co/api/v2/pokemon/1"} />
-              <PokeRow pokemon={"https://pokeapi.co/api/v2/pokemon/2"} />
-              <PokeRow pokemon={"https://pokeapi.co/api/v2/pokemon/3"} />
-            </>
+            <tr>
+              <Row />
+            </tr>
           </thead>
         </table>
         <div className="App-content-navigation">
