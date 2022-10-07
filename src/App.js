@@ -33,7 +33,7 @@ function App() {
   };
 
   useEffect(() => {
-    fetchData("https://pokeapi.co/api/v2/pokemon/51");
+    fetchData("https://pokeapi.co/api/v2/pokemon/59");
   }, []);
 
   return (

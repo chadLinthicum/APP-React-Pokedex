@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const PokeRow = (props) => {
-  const pokemon = props.pokemon;
-
+const PokeRow = ({ pokemon }) => {
   // const [sprite, setSprite] = useState("");
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
