@@ -4,6 +4,8 @@ import axios from "axios";
 import PokeRow from "./components/PokeRow";
 
 function App() {
+  let [input, setInput] = useState(1);
+
   const [sprite, setSprite] = useState("");
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
@@ -33,8 +35,16 @@ function App() {
   };
 
   useEffect(() => {
-    fetchData("https://pokeapi.co/api/v2/pokemon/59");
+    fetchData("https://pokeapi.co/api/v2/pokemon/" + input);
+    // eslint-disable-next-line
   }, []);
+
+  function updatePoke(event) {
+    setInput(event.target.value);
+    console.log("1: " + input);
+    fetchData("https://pokeapi.co/api/v2/pokemon/" + input);
+    console.log("2: " + input);
+  }
 
   return (
     <div className="App">
@@ -43,7 +53,11 @@ function App() {
       </header>
       <div className="App-content">
         <div className="App-content-header">
-          <input type="text" list="input" />
+          <input
+            type="text"
+            list="input"
+            onChange={(event) => updatePoke(event)}
+          />
           <datalist id="input">
             <option>Bulbasaur</option>
             <option>Ivysaur</option>
@@ -52,7 +66,7 @@ function App() {
         </div>
         <div className="App-content-character">
           <div className="App-content-character-pic">
-            <img id="dog" alt="dog" src={sprite} />
+            <img id="pokemon" alt="pokemon" src={sprite} />
           </div>
           <div className="App-content-character-info">
             <h2>Data</h2>

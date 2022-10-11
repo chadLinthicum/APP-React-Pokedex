@@ -32,6 +32,7 @@ const PokeRow = ({ pokemon }) => {
 
   useEffect(() => {
     fetchData(pokemon);
+    // eslint-disable-next-line
   }, []);
 
   return (
