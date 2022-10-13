@@ -16,6 +16,7 @@
   margin: 1rem;
   border: 3px solid black;
   border-radius: 5px;
+  height: calc(100vh - 38px);
 }
 
 .App-content-header {

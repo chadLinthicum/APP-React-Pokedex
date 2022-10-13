@@ -4,7 +4,7 @@ import axios from "axios";
 import PokeRow from "./components/PokeRow";
 
 function App() {
-  let [input, setInput] = useState(1);
+  let [input, setInput] = useState(2);
 
   const [sprite, setSprite] = useState("");
   const [name, setName] = useState("");
@@ -36,21 +36,16 @@ function App() {
 
   useEffect(() => {
     fetchData("https://pokeapi.co/api/v2/pokemon/" + input);
-    // eslint-disable-next-line
-  }, []);
+  }, [input]);
 
   function updatePoke(event) {
     setInput(event.target.value);
-    console.log("1: " + input);
     fetchData("https://pokeapi.co/api/v2/pokemon/" + input);
-    console.log("2: " + input);
+    // event.target.value = "";
   }
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Pokédex</h1>
-      </header>
       <div className="App-content">
         <div className="App-content-header">
           <input
@@ -59,9 +54,9 @@ function App() {
             onChange={(event) => updatePoke(event)}
           />
           <datalist id="input">
-            <option>Bulbasaur</option>
-            <option>Ivysaur</option>
-            <option>Venusaur</option>
+            <option>bulbasaur</option>
+            <option>ivysaur</option>
+            <option>venusaur</option>
           </datalist>
         </div>
         <div className="App-content-character">
@@ -113,14 +108,42 @@ function App() {
               <th>Speed</th>
             </tr>
             <>
-              <PokeRow pokemon={"https://pokeapi.co/api/v2/pokemon/1"} />
-              <PokeRow pokemon={"https://pokeapi.co/api/v2/pokemon/2"} />
-              <PokeRow pokemon={"https://pokeapi.co/api/v2/pokemon/3"} />
+              <PokeRow
+                pokemon={"https://pokeapi.co/api/v2/pokemon/" + (input + 1)}
+              />
+              <PokeRow
+                pokemon={"https://pokeapi.co/api/v2/pokemon/" + (input + 2)}
+              />
+              <PokeRow
+                pokemon={"https://pokeapi.co/api/v2/pokemon/" + (input + 3)}
+              />
+              <PokeRow
+                pokemon={"https://pokeapi.co/api/v2/pokemon/" + (input + 4)}
+              />
+              <PokeRow
+                pokemon={"https://pokeapi.co/api/v2/pokemon/" + (input + 5)}
+              />
+              <PokeRow
+                pokemon={"https://pokeapi.co/api/v2/pokemon/" + (input + 6)}
+              />
+              <PokeRow
+                pokemon={"https://pokeapi.co/api/v2/pokemon/" + (input + 7)}
+              />
+              <PokeRow
+                pokemon={"https://pokeapi.co/api/v2/pokemon/" + (input + 8)}
+              />
+              <PokeRow
+                pokemon={"https://pokeapi.co/api/v2/pokemon/" + (input + 9)}
+              />
+              <PokeRow
+                pokemon={"https://pokeapi.co/api/v2/pokemon/" + (input + 10)}
+              />
             </>
           </thead>
         </table>
         <div className="App-content-navigation">
-          <h3>&#60; &#62;</h3>
+          <button onClick={() => setInput(input - 1)}>&#60;</button>
+          <button onClick={() => setInput(input + 1)}>&#62;</button>
         </div>
       </div>
     </div>
