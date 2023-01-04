@@ -42,8 +42,6 @@ function App() {
     setInput(event.target.value);
   }
 
-  console.log(fetchData("https://pokeapi.co/api/v2/pokemon/1"));
-
   return (
     <div className="container">
       <div className="app">
