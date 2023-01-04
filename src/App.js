@@ -4,7 +4,7 @@ import axios from "axios";
 import PokeRow from "./components/PokeRow";
 
 function App() {
-  let [input, setInput] = useState(1);
+  let [input, setInput] = useState(15);
 
   const [sprite, setSprite] = useState("");
   const [name, setName] = useState("");
@@ -18,6 +18,7 @@ function App() {
 
   const fetchData = async (pokemon) => {
     const { data } = await axios.get(pokemon);
+
     setName(data.name);
     setSprite(data.sprites.other["official-artwork"].front_default);
     setNumber(data.id);
@@ -32,6 +33,8 @@ function App() {
     } else {
       setType(data.types[0].type.name);
     }
+
+    console.log(data);
   };
 
   fetchData("https://pokeapi.co/api/v2/pokemon/" + input);
@@ -42,12 +45,29 @@ function App() {
     setInput(event.target.value);
   }
 
+  // function FetchKantoPokemon() {
+  //   fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
+  //     .then((response) => response.json())
+  //     .then((allpokemon) => console.log(allpokemon));
+  // }
+
+  // FetchKantoPokemon();
+
   return (
     <div className="container">
       <div className="app">
         <header>Pokedex</header>
         <div className="input">
-          <input type="text" onChange={(event) => updatePoke(event)} />
+          <input
+            type="text"
+            list="drop-down"
+            onChange={(event) => updatePoke(event)}
+          />
+          <datalist id="drop-down">
+            <option>bulbasaur</option>
+            <option>ivysaur</option>
+            <option>venusaur</option>
+          </datalist>
         </div>
         <div className="character">
           <div className="character-pic">
