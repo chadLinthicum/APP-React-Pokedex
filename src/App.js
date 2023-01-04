@@ -5,7 +5,6 @@ import PokeRow from "./components/PokeRow";
 
 function App() {
   let [input, setInput] = useState(15);
-  let [input, setInput] = useState(22);
 
   const [sprite, setSprite] = useState("");
   const [name, setName] = useState("");
