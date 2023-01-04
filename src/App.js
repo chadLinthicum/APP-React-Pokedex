@@ -37,9 +37,9 @@ function App() {
     console.log(data);
   };
 
-  fetchData("https://pokeapi.co/api/v2/pokemon/" + input);
-
-  // useEffect(() => {}, [input]);
+  useEffect(() => {
+    fetchData("https://pokeapi.co/api/v2/pokemon/" + input);
+  }, [input]);
 
   function updatePoke(event) {
     setInput(event.target.value);
