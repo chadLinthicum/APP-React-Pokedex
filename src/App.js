@@ -47,16 +47,7 @@ function App() {
       <div className="app">
         <header>Pokedex</header>
         <div className="input">
-          <input
-            type="text"
-            list="drop-down"
-            onChange={(event) => updatePoke(event)}
-          />
-          <datalist id="drop-down">
-            <option>bulbasaur</option>
-            <option>ivysaur</option>
-            <option>venusaur</option>
-          </datalist>
+          <input type="text" onChange={(event) => updatePoke(event)} />
         </div>
         <div className="character">
           <div className="character-pic">
