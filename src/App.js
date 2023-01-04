@@ -4,7 +4,7 @@ import axios from "axios";
 import PokeRow from "./components/PokeRow";
 
 function App() {
-  let [input, setInput] = useState(2);
+  let [input, setInput] = useState(1);
 
   const [sprite, setSprite] = useState("");
   const [name, setName] = useState("");
@@ -36,14 +36,13 @@ function App() {
 
   fetchData("https://pokeapi.co/api/v2/pokemon/" + input);
 
-  // useEffect(() => {
-  // }, [input]);
+  // useEffect(() => {}, [input]);
 
   function updatePoke(event) {
     setInput(event.target.value);
-    // fetchData("https://pokeapi.co/api/v2/pokemon/" + event.target.value);
-    // event.target.value = "";
   }
+
+  console.log(fetchData("https://pokeapi.co/api/v2/pokemon/1"));
 
   return (
     <div className="container">
