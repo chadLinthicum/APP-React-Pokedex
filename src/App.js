@@ -4,6 +4,7 @@ import axios from "axios";
 import PokeRow from "./components/PokeRow";
 
 function App() {
+  let [input, setInput] = useState(15);
   let [input, setInput] = useState(22);
 
   const [sprite, setSprite] = useState("");
@@ -18,6 +19,7 @@ function App() {
 
   const fetchData = async (pokemon) => {
     const { data } = await axios.get(pokemon);
+
     setName(data.name);
     setSprite(data.sprites.other["official-artwork"].front_default);
     setNumber(data.id);
@@ -32,18 +34,25 @@ function App() {
     } else {
       setType(data.types[0].type.name);
     }
+
+    console.log(data);
   };
 
   fetchData("https://pokeapi.co/api/v2/pokemon/" + input);
 
-  // useEffect(() => {
-  // }, [input]);
+  // useEffect(() => {}, [input]);
 
   function updatePoke(event) {
     setInput(event.target.value);
-    // fetchData("https://pokeapi.co/api/v2/pokemon/" + event.target.value);
-    // event.target.value = "";
   }
+
+  // function FetchKantoPokemon() {
+  //   fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
+  //     .then((response) => response.json())
+  //     .then((allpokemon) => console.log(allpokemon));
+  // }
+
+  // FetchKantoPokemon();
 
   return (
     <div className="container">
