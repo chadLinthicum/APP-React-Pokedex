@@ -1,20 +1,32 @@
+import React from "react";
 import "./App.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import PokeRow from "./components/PokeRow";
+import bulbasaur from "./1.png";
 
 function App() {
-  let [input, setInput] = useState(15);
+  let [input, setInput] = useState(1);
 
-  const [sprite, setSprite] = useState("");
-  const [name, setName] = useState("");
-  const [number, setNumber] = useState("");
-  const [type, setType] = useState("");
-  const [weight, setWeight] = useState("");
-  const [hp, setHP] = useState("");
-  const [attack, setAttack] = useState("");
-  const [defense, setDefense] = useState("");
-  const [speed, setSpeed] = useState("");
+  const [sprite, setSprite] = useState(bulbasaur);
+  const [name, setName] = useState("Bulbasaur");
+  const [number, setNumber] = useState("1");
+  const [type, setType] = useState("Grass/Poison");
+  const [weight, setWeight] = useState("69");
+  const [hp, setHP] = useState("45");
+  const [attack, setAttack] = useState("49");
+  const [defense, setDefense] = useState("49");
+  const [speed, setSpeed] = useState("65");
+
+  const [inputSprite, setInputSprite] = useState(sprite);
+  const [inputName, setInputName] = useState(name);
+  const [inputNumber, setInputNumber] = useState(number);
+  const [inputType, inputSetType] = useState(type);
+  const [inputWeight, inputSetWeight] = useState(weight);
+  const [inputHP, inputSetHP] = useState(hp);
+  const [inputAttack, inputSetAttack] = useState(attack);
+  const [inputDefense, inputSetDefense] = useState(defense);
+  const [inputSpeed, inputSetSpeed] = useState(speed);
 
   const fetchData = async (pokemon) => {
     const { data } = await axios.get(pokemon);
@@ -34,7 +46,7 @@ function App() {
       setType(data.types[0].type.name);
     }
 
-    console.log(data);
+    // console.log(data);
   };
 
   useEffect(() => {
@@ -45,33 +57,41 @@ function App() {
     setInput(event.target.value);
   }
 
-  // function FetchKantoPokemon() {
-  //   fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
-  //     .then((response) => response.json())
-  //     .then((allpokemon) => console.log(allpokemon));
-  // }
-
-  // FetchKantoPokemon();
+  function Submit(e) {
+    e.preventDefault();
+    setInputName(name);
+    setInputSprite(sprite);
+    setInputNumber(number);
+    inputSetType(type);
+    inputSetWeight(weight);
+    inputSetHP(hp);
+    inputSetAttack(attack);
+    inputSetDefense(defense);
+    inputSetSpeed(speed);
+  }
 
   return (
     <div className="container">
       <div className="app">
         <header>Pokedex</header>
         <div className="input">
-          <input
-            type="text"
-            list="drop-down"
-            onChange={(event) => updatePoke(event)}
-          />
-          <datalist id="drop-down">
-            <option>bulbasaur</option>
-            <option>ivysaur</option>
-            <option>venusaur</option>
-          </datalist>
+          <form onSubmit={Submit}>
+            <input
+              type="text"
+              list="drop-down"
+              onChange={(event) => updatePoke(event)}
+            />
+            <datalist id="drop-down">
+              <option>squirtle</option>
+              <option>wartortle</option>
+              <option>blastoise</option>
+            </datalist>
+            <button type="submit">Submit</button>
+          </form>
         </div>
         <div className="character">
           <div className="character-pic">
-            <img id="pokemon" alt="pokemon" src={sprite} />
+            <img id="pokemon" alt="bulbasaur" src={inputSprite} />
           </div>
           <div className="character-data">
             <table id="character-data-table">
@@ -83,10 +103,10 @@ function App() {
                   <th>Weight</th>
                 </tr>
                 <tr>
-                  <td>{name}</td>
-                  <td>{number}</td>
-                  <td>{type}</td>
-                  <td>{weight}</td>
+                  <td>{inputName}</td>
+                  <td>{inputNumber}</td>
+                  <td>{inputType}</td>
+                  <td>{inputWeight}</td>
                 </tr>
                 <tr>
                   <th>HP</th>
@@ -95,10 +115,10 @@ function App() {
                   <th>Speed</th>
                 </tr>
                 <tr>
-                  <td>{hp}</td>
-                  <td>{attack}</td>
-                  <td>{defense}</td>
-                  <td>{speed}</td>
+                  <td>{inputHP}</td>
+                  <td>{inputAttack}</td>
+                  <td>{inputDefense}</td>
+                  <td>{inputSpeed}</td>
                 </tr>
               </thead>
             </table>
