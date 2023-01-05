@@ -3,7 +3,7 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import PokeRow from "./components/PokeRow";
-import bulbasaur from "./1.png";
+import bulbasaur from "./assets/1.png";
 
 function App() {
   let [input, setInput] = useState(1);
@@ -59,6 +59,8 @@ function App() {
 
   function Submit(e) {
     e.preventDefault();
+    document.getElementById("test").reset();
+
     setInputName(name);
     setInputSprite(sprite);
     setInputNumber(number);
@@ -75,10 +77,11 @@ function App() {
       <div className="app">
         <header>Pokedex</header>
         <div className="input">
-          <form onSubmit={Submit}>
+          <form id="test" onSubmit={Submit}>
             <input
               type="text"
               list="drop-down"
+              placeholder="Who's that Pokemon!?"
               onChange={(event) => updatePoke(event)}
             />
             <datalist id="drop-down">
