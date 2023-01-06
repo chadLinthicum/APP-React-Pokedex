@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import PokeRow from "./components/PokeRow";
 import bulbasaur from "./assets/1.png";
@@ -21,12 +21,14 @@ function App() {
   const [inputSprite, setInputSprite] = useState(sprite);
   const [inputName, setInputName] = useState(name);
   const [inputNumber, setInputNumber] = useState(number);
-  const [inputType, inputSetType] = useState(type);
-  const [inputWeight, inputSetWeight] = useState(weight);
-  const [inputHP, inputSetHP] = useState(hp);
-  const [inputAttack, inputSetAttack] = useState(attack);
-  const [inputDefense, inputSetDefense] = useState(defense);
-  const [inputSpeed, inputSetSpeed] = useState(speed);
+  const [inputType, setInputType] = useState(type);
+  const [inputWeight, setInputWeight] = useState(weight);
+  const [inputHP, setInputHP] = useState(hp);
+  const [inputAttack, setInputAttack] = useState(attack);
+  const [inputDefense, setInputDefense] = useState(defense);
+  const [inputSpeed, setInputSpeed] = useState(speed);
+
+  const formRef = useRef();
 
   const fetchData = async (pokemon) => {
     const { data } = await axios.get(pokemon);
@@ -59,17 +61,19 @@ function App() {
 
   function Submit(e) {
     e.preventDefault();
-    document.getElementById("test").reset();
+    // document.getElementById("test").reset();
+
+    formRef.current.reset();
 
     setInputName(name);
     setInputSprite(sprite);
     setInputNumber(number);
-    inputSetType(type);
-    inputSetWeight(weight);
-    inputSetHP(hp);
-    inputSetAttack(attack);
-    inputSetDefense(defense);
-    inputSetSpeed(speed);
+    setInputType(type);
+    setInputWeight(weight);
+    setInputHP(hp);
+    setInputAttack(attack);
+    setInputDefense(defense);
+    setInputSpeed(speed);
   }
 
   return (
@@ -77,7 +81,7 @@ function App() {
       <div className="app">
         <header>Pokedex</header>
         <div className="input">
-          <form id="test" onSubmit={Submit}>
+          <form id="test" ref={formRef} onSubmit={Submit}>
             <input
               type="text"
               list="drop-down"
