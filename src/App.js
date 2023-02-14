@@ -57,7 +57,7 @@ function App() {
   }, [input]);
 
   function updatePoke(event) {
-    setInput(event.target.value);
+    setInput(event.target.value.toLowerCase());
   }
 
   function Submit(e) {
@@ -77,7 +77,6 @@ function App() {
 
     speech();
     dotToggle();
-    dotToggleCount();
   }
 
   function speech() {
@@ -107,6 +106,7 @@ function App() {
     return word.match(/[aeiouy]{1,2}/g).length; //word.scan(/[aeiouy]{1,2}/).size
   }
 
+  let counter = 1;
   function dotToggle() {
     function dotToggleBlue() {
       dotRef.current.style.backgroundColor = "#74f3f9";
@@ -116,14 +116,9 @@ function App() {
     }
     setTimeout(dotToggleBlue, 200);
     setTimeout(dotToggleWhite, 300);
-  }
-
-  let counter = 1;
-  function dotToggleCount() {
-    dotToggle();
-    if (counter < syllableCount(name)) {
+    if (counter <= syllableCount(name)) {
       counter++;
-      window.setTimeout(dotToggleCount, 200);
+      window.setTimeout(dotToggle, 200);
     }
   }
 
@@ -145,9 +140,9 @@ function App() {
               onChange={(event) => updatePoke(event)}
             />
             <datalist id="drop-down">
-              <option>squirtle</option>
-              <option>wartortle</option>
-              <option>blastoise</option>
+              <option>Squirtle</option>
+              <option>Wartortle</option>
+              <option>Blastoise</option>
             </datalist>
             <button type="submit">Submit</button>
           </form>
