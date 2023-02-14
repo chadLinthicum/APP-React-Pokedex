@@ -62,7 +62,7 @@ function App() {
   function Submit(e) {
     e.preventDefault();
     // document.getElementById("test").reset();
-
+    // console.log(formRef.value);
     formRef.current.reset();
 
     setInputName(name);
@@ -74,12 +74,29 @@ function App() {
     setInputAttack(attack);
     setInputDefense(defense);
     setInputSpeed(speed);
+
+    speech();
+  }
+
+  function speech() {
+    if ("speechSynthesis" in window) {
+      console.log("speechSynthesis Supported!");
+      var msg = new SpeechSynthesisUtterance();
+      msg.volume = 1; // From 0 to 1
+      msg.rate = 1.5; // From 0.1 to 10
+      msg.pitch = 2; // From 0 to 2
+      msg.text = name;
+      msg.lang = "en";
+      speechSynthesis.speak(msg);
+    } else {
+      alert("Sorry, your browser doesn't support text to speech!");
+    }
   }
 
   return (
     <div className="container">
       <div className="app">
-        <header>Pokedex</header>
+        <header>Pokédex</header>
         <div className="input">
           <form id="test" ref={formRef} onSubmit={Submit}>
             <input
