@@ -77,6 +77,7 @@ function App() {
 
     speech();
     dotToggle();
+    dotToggleCount();
   }
 
   function speech() {
@@ -106,7 +107,6 @@ function App() {
     return word.match(/[aeiouy]{1,2}/g).length; //word.scan(/[aeiouy]{1,2}/).size
   }
 
-  let counter = 1;
   function dotToggle() {
     function dotToggleBlue() {
       dotRef.current.style.backgroundColor = "#74f3f9";
@@ -116,9 +116,14 @@ function App() {
     }
     setTimeout(dotToggleBlue, 200);
     setTimeout(dotToggleWhite, 300);
-    if (counter <= syllableCount(name)) {
+  }
+
+  let counter = 1;
+  function dotToggleCount() {
+    dotToggle();
+    if (counter < syllableCount(name)) {
       counter++;
-      window.setTimeout(dotToggle, 200);
+      window.setTimeout(dotToggleCount, 200);
     }
   }
 
