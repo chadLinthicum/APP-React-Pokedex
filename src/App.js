@@ -29,6 +29,7 @@ function App() {
   const [inputSpeed, setInputSpeed] = useState(speed);
 
   const formRef = useRef();
+  const dotRef = useRef();
 
   const fetchData = async (pokemon) => {
     const { data } = await axios.get(pokemon);
@@ -61,8 +62,7 @@ function App() {
 
   function Submit(e) {
     e.preventDefault();
-    // document.getElementById("test").reset();
-    // console.log(formRef.value);
+    // console.log(formRef.value); Why doesn't this work?
     formRef.current.reset();
 
     setInputName(name);
@@ -76,15 +76,19 @@ function App() {
     setInputSpeed(speed);
 
     speech();
+    dotToggle();
+    dotToggleCount();
   }
 
   function speech() {
     if ("speechSynthesis" in window) {
-      console.log("speechSynthesis Supported!");
+      // console.log("speechSynthesis Supported!");
       var msg = new SpeechSynthesisUtterance();
+      // var voices = window.speechSynthesis.getVoices();
+      // msg.voice = voices[21];
       msg.volume = 1; // From 0 to 1
-      msg.rate = 1.5; // From 0.1 to 10
-      msg.pitch = 2; // From 0 to 2
+      msg.rate = 1.8; // From 0.1 to 10
+      msg.pitch = 0; // From 0 to 2
       msg.text = name;
       msg.lang = "en";
       speechSynthesis.speak(msg);
@@ -93,10 +97,45 @@ function App() {
     }
   }
 
+  function syllableCount(word) {
+    word = word.toLowerCase(); //word.downcase!
+    if (word.length <= 3) {
+      return 1;
+    } //return 1 if word.length <= 3
+    word = word.replace(/(?:[^laeiouy]es|ed|[^laeiouy]e)$/, ""); //word.sub!(/(?:[^laeiouy]es|ed|[^laeiouy]e)$/, '')
+    word = word.replace(/^y/, ""); //word.sub!(/^y/, '')
+    return word.match(/[aeiouy]{1,2}/g).length; //word.scan(/[aeiouy]{1,2}/).size
+  }
+
+  function dotToggle() {
+    function dotToggleBlue() {
+      dotRef.current.style.backgroundColor = "#74f3f9";
+    }
+    function dotToggleWhite() {
+      dotRef.current.style.backgroundColor = "#0e55a6";
+    }
+    setTimeout(dotToggleBlue, 200);
+    setTimeout(dotToggleWhite, 300);
+  }
+
+  let counter = 1;
+  function dotToggleCount() {
+    dotToggle();
+    if (counter < syllableCount(name)) {
+      counter++;
+      window.setTimeout(dotToggleCount, 200);
+    }
+  }
+
   return (
     <div className="container">
       <div className="app">
-        <header>Pokédex</header>
+        <header>
+          <span className="dot" ref={dotRef}></span>
+          <span>Pokédex</span>
+          <span className="volume">&#128362;</span>
+          {/* <span>&#128360;</span> */}
+        </header>
         <div className="input">
           <form id="test" ref={formRef} onSubmit={Submit}>
             <input
