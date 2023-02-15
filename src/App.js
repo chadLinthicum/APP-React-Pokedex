@@ -29,7 +29,7 @@ function App() {
   const [inputSpeed, setInputSpeed] = useState(speed);
 
   const formRef = useRef();
-  const dotRef = useRef();
+  const lightRef = useRef();
 
   const fetchData = async (pokemon) => {
     const { data } = await axios.get(pokemon);
@@ -75,14 +75,19 @@ function App() {
     setInputDefense(defense);
     setInputSpeed(speed);
 
-    speech();
-    dotToggle();
-    dotToggleCount();
+    if (sound) {
+      speech();
+      lightBlink();
+    }
   }
+
+  const [sound, setSound] = useState(true);
+  const toggleSound = () => {
+    setSound(!sound);
+  };
 
   function speech() {
     if ("speechSynthesis" in window) {
-      // console.log("speechSynthesis Supported!");
       var msg = new SpeechSynthesisUtterance();
       // var voices = window.speechSynthesis.getVoices();
       // msg.voice = voices[21];
@@ -107,23 +112,19 @@ function App() {
     return word.match(/[aeiouy]{1,2}/g).length; //word.scan(/[aeiouy]{1,2}/).size
   }
 
-  function dotToggle() {
-    function dotToggleBlue() {
-      dotRef.current.style.backgroundColor = "#74f3f9";
-    }
-    function dotToggleWhite() {
-      dotRef.current.style.backgroundColor = "#0e55a6";
-    }
-    setTimeout(dotToggleBlue, 200);
-    setTimeout(dotToggleWhite, 300);
-  }
-
   let counter = 1;
-  function dotToggleCount() {
-    dotToggle();
+  function lightBlink() {
+    function lightBlinkBlue() {
+      lightRef.current.style.backgroundColor = "#74f3f9";
+    }
+    function lightBlinkWhite() {
+      lightRef.current.style.backgroundColor = "#0e55a6";
+    }
+    setTimeout(lightBlinkBlue, 200);
+    setTimeout(lightBlinkWhite, 300);
     if (counter < syllableCount(name)) {
       counter++;
-      window.setTimeout(dotToggleCount, 200);
+      window.setTimeout(lightBlink, 200);
     }
   }
 
@@ -131,9 +132,10 @@ function App() {
     <div className="container">
       <div className="app">
         <header>
-          <span className="dot" ref={dotRef}></span>
+          <span className="light" ref={lightRef}></span>
           <span>Pokédex</span>
-          <span className="volume">&#128362;</span>
+          <input type="checkbox" onChange={toggleSound}></input>
+          {/* <span className="volume">&#128362;</span> */}
           {/* <span>&#128360;</span> */}
         </header>
         <div className="input">
