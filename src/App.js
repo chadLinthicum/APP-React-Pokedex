@@ -92,8 +92,8 @@ function App() {
       // var voices = window.speechSynthesis.getVoices();
       // msg.voice = voices[21];
       msg.volume = 1; // From 0 to 1
-      msg.rate = 1.8; // From 0.1 to 10
-      msg.pitch = 0; // From 0 to 2
+      msg.rate = 1; // From 0.1 to 10
+      msg.pitch = 1.9; // From 0 to 2
       msg.text = name;
       msg.lang = "en";
       speechSynthesis.speak(msg);
@@ -114,14 +114,14 @@ function App() {
 
   let counter = 1;
   function lightBlink() {
-    function lightBlinkBlue() {
+    function lightColorBlue() {
       lightRef.current.style.backgroundColor = "#74f3f9";
     }
-    function lightBlinkWhite() {
+    function lightColorWhite() {
       lightRef.current.style.backgroundColor = "#0e55a6";
     }
-    setTimeout(lightBlinkBlue, 200);
-    setTimeout(lightBlinkWhite, 300);
+    setTimeout(lightColorBlue, 200);
+    setTimeout(lightColorWhite, 300);
     if (counter < syllableCount(name)) {
       counter++;
       window.setTimeout(lightBlink, 200);
@@ -134,16 +134,18 @@ function App() {
         <header>
           <span className="light" ref={lightRef}></span>
           <span>Pokédex</span>
-          <input type="checkbox" onChange={toggleSound}></input>
-          {/* <span className="volume">&#128362;</span> */}
-          {/* <span>&#128360;</span> */}
+          <input
+            className="volume"
+            type="checkbox"
+            onChange={toggleSound}
+          ></input>
         </header>
         <div className="input">
           <form id="test" ref={formRef} onSubmit={Submit}>
             <input
               type="text"
               list="drop-down"
-              placeholder="Who's that Pokemon!?"
+              placeholder="Who's That Pokemon!?"
               onChange={(event) => updatePoke(event)}
             />
             <datalist id="drop-down">
