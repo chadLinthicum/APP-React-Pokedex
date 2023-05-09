@@ -346,6 +346,58 @@ function App() {
             </table>
           </div>
         </div>
+        {/* <div id="tenList">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Number</th>
+                <th>Type</th>
+                <th>Weight</th>
+                <th>HP</th>
+                <th>Attack</th>
+                <th>Defense</th>
+                <th>Speed</th>
+              </tr>
+              <>
+                <PokeRow
+                  pokemon={"https://pokeapi.co/api/v2/pokemon/" + (input + 1)}
+                />
+                <PokeRow
+                  pokemon={"https://pokeapi.co/api/v2/pokemon/" + (input + 2)}
+                />
+                <PokeRow
+                  pokemon={"https://pokeapi.co/api/v2/pokemon/" + (input + 3)}
+                />
+                <PokeRow
+                  pokemon={"https://pokeapi.co/api/v2/pokemon/" + (input + 4)}
+                />
+                <PokeRow
+                  pokemon={"https://pokeapi.co/api/v2/pokemon/" + (input + 5)}
+                />
+                <PokeRow
+                  pokemon={"https://pokeapi.co/api/v2/pokemon/" + (input + 6)}
+                />
+                <PokeRow
+                  pokemon={"https://pokeapi.co/api/v2/pokemon/" + (input + 7)}
+                />
+                <PokeRow
+                  pokemon={"https://pokeapi.co/api/v2/pokemon/" + (input + 8)}
+                />
+                <PokeRow
+                  pokemon={"https://pokeapi.co/api/v2/pokemon/" + (input + 9)}
+                />
+                <PokeRow
+                  pokemon={"https://pokeapi.co/api/v2/pokemon/" + (input + 10)}
+                />
+              </>
+            </thead>
+          </table>
+        </div>
+        <div className="navigation">
+          <button onClick={() => setInput(input - 1)}>&#60;</button>
+          <button onClick={() => setInput(input + 1)}>&#62;</button>
+        </div> */}
       </div>
     </div>
   );
