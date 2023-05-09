@@ -238,7 +238,7 @@ function App() {
               <option>Slowbro</option>
               <option>Magnemite</option>
               <option>Magneton</option>
-              <option>Farfetch'd</option>
+              <option>Farfetchd</option>
               <option>Doduo</option>
               <option>Dodrio</option>
               <option>Seel</option>
@@ -277,7 +277,7 @@ function App() {
               <option>Seaking</option>
               <option>Staryu</option>
               <option>Starmie</option>
-              <option>Mr. Mime</option>
+              <option>Mr-Mime</option>
               <option>Scyther</option>
               <option>Jynx</option>
               <option>Electabuzz</option>
