@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/chadLinthicum/APP-React-Pokedex/static/css/main.2664c356.css",
-    "main.js": "/chadLinthicum/APP-React-Pokedex/static/js/main.77ddd276.js",
-    "static/js/787.28cb0dcd.chunk.js": "/chadLinthicum/APP-React-Pokedex/static/js/787.28cb0dcd.chunk.js",
-    "static/media/holo4.jpg": "/chadLinthicum/APP-React-Pokedex/static/media/holo4.58737dfc38c6d92d4b45.jpg",
-    "static/media/pokedex-logo.png": "/chadLinthicum/APP-React-Pokedex/static/media/pokedex-logo.124337e598db8de6392d.png",
-    "static/media/1.png": "/chadLinthicum/APP-React-Pokedex/static/media/1.961a737abc93a29558b0.png",
-    "static/media/grass.jpg": "/chadLinthicum/APP-React-Pokedex/static/media/grass.63111b78e081cc48ffcf.jpg",
-    "index.html": "/chadLinthicum/APP-React-Pokedex/index.html",
-    "main.2664c356.css.map": "/chadLinthicum/APP-React-Pokedex/static/css/main.2664c356.css.map",
-    "main.77ddd276.js.map": "/chadLinthicum/APP-React-Pokedex/static/js/main.77ddd276.js.map",
-    "787.28cb0dcd.chunk.js.map": "/chadLinthicum/APP-React-Pokedex/static/js/787.28cb0dcd.chunk.js.map"
+    "main.css": "/APP-React-Pokedex/static/css/main.b936cdba.css",
+    "main.js": "/APP-React-Pokedex/static/js/main.262f1594.js",
+    "static/js/787.28cb0dcd.chunk.js": "/APP-React-Pokedex/static/js/787.28cb0dcd.chunk.js",
+    "static/media/holo4.jpg": "/APP-React-Pokedex/static/media/holo4.58737dfc38c6d92d4b45.jpg",
+    "static/media/pokedex-logo.png": "/APP-React-Pokedex/static/media/pokedex-logo.124337e598db8de6392d.png",
+    "static/media/1.png": "/APP-React-Pokedex/static/media/1.961a737abc93a29558b0.png",
+    "static/media/grass.jpg": "/APP-React-Pokedex/static/media/grass.63111b78e081cc48ffcf.jpg",
+    "index.html": "/APP-React-Pokedex/index.html",
+    "main.b936cdba.css.map": "/APP-React-Pokedex/static/css/main.b936cdba.css.map",
+    "main.262f1594.js.map": "/APP-React-Pokedex/static/js/main.262f1594.js.map",
+    "787.28cb0dcd.chunk.js.map": "/APP-React-Pokedex/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2664c356.css",
-    "static/js/main.77ddd276.js"
+    "static/css/main.b936cdba.css",
+    "static/js/main.262f1594.js"
   ]
 }
