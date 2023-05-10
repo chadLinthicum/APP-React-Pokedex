@@ -16,6 +16,7 @@ body {
   margin: 0;
   background-image: url("assets/grass.jpg");
   background-repeat: repeat;
+  color: #000000;
 }
 
 header {
@@ -126,6 +127,7 @@ header {
   width: 90%;
   box-shadow: 2px 2px 1px #333;
   font-weight: bold;
+  width: 50%;
 }
 
 input::-webkit-calendar-picker-indicator {
@@ -174,6 +176,12 @@ input::-webkit-calendar-picker-indicator {
 #input {
   margin-bottom: 0px;
 }
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 form button {
   margin: 5px;
@@ -182,6 +190,7 @@ form button {
   border: solid 3px black;
   cursor: pointer;
   font-weight: 800;
+  width: 50px;
 }
 
 #title {
