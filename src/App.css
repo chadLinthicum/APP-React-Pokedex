@@ -127,7 +127,7 @@ header {
   width: 90%;
   box-shadow: 2px 2px 1px #333;
   font-weight: bold;
-  width: 50%;
+  width: 60%;
 }
 
 input::-webkit-calendar-picker-indicator {
@@ -184,7 +184,7 @@ form {
 }
 
 form button {
-  margin: 5px;
+  margin: 10px;
   background-color: #efcc2e;
   border-radius: 15px;
   border: solid 3px black;
