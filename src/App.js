@@ -94,6 +94,9 @@ function App() {
 
   function Submit(e) {
     e.preventDefault();
+
+    const viewport = document.querySelector('meta[name="viewport"]');
+    viewport.setAttribute("content", "width=device-width, initial-scale=0.1");
     // console.log(formRef.value); Why doesn't this work?
 
     formRef.current.reset();
@@ -183,6 +186,7 @@ function App() {
             className="volume"
             type="checkbox"
             onChange={toggleSound}
+            autoFocus={false}
           ></input>
         </header>
         <div className="input">
