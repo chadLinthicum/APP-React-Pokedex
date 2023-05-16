@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/APP-React-Pokedex/static/css/main.5ca922a2.css",
-    "main.js": "/APP-React-Pokedex/static/js/main.562608d2.js",
+    "main.css": "/APP-React-Pokedex/static/css/main.9f1cf0d6.css",
+    "main.js": "/APP-React-Pokedex/static/js/main.29e1a4ae.js",
     "static/js/787.28cb0dcd.chunk.js": "/APP-React-Pokedex/static/js/787.28cb0dcd.chunk.js",
-    "static/media/holo4.webp": "/APP-React-Pokedex/static/media/holo4.3a054cbf7ea3bfb356db.webp",
+    "static/media/holo4.webp": "/APP-React-Pokedex/static/media/holo4.6c2307595d3924ebe480.webp",
     "static/media/pokedex-logo.webp": "/APP-React-Pokedex/static/media/pokedex-logo.cdc1d001d50b89542e8f.webp",
     "static/media/grass.webp": "/APP-React-Pokedex/static/media/grass.e911d40bf1c6780ef620.webp",
     "static/media/1.webp": "/APP-React-Pokedex/static/media/1.2f3ecb209c5019fea9ca.webp",
     "static/media/mute.webp": "/APP-React-Pokedex/static/media/mute.f7d84c6768b8899f5e90.webp",
     "static/media/unmute.webp": "/APP-React-Pokedex/static/media/unmute.adc80ae9b1f5a08c051e.webp",
     "index.html": "/APP-React-Pokedex/index.html",
-    "main.5ca922a2.css.map": "/APP-React-Pokedex/static/css/main.5ca922a2.css.map",
-    "main.562608d2.js.map": "/APP-React-Pokedex/static/js/main.562608d2.js.map",
+    "main.9f1cf0d6.css.map": "/APP-React-Pokedex/static/css/main.9f1cf0d6.css.map",
+    "main.29e1a4ae.js.map": "/APP-React-Pokedex/static/js/main.29e1a4ae.js.map",
     "787.28cb0dcd.chunk.js.map": "/APP-React-Pokedex/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5ca922a2.css",
-    "static/js/main.562608d2.js"
+    "static/css/main.9f1cf0d6.css",
+    "static/js/main.29e1a4ae.js"
   ]
 }
