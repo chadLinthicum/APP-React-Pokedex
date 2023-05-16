@@ -68,12 +68,34 @@ function App() {
   }, [input]);
 
   function updatePoke(event) {
-    setInput(event.target.value.toLowerCase());
+    let pokemon = event.target.value;
+    if (pokemon.includes(" ")) {
+      const index = pokemon.indexOf(" ");
+      setInput(pokemon.toLowerCase().slice(index + 1));
+      event.target.value = pokemon.slice(index + 1);
+    } else {
+      setInput(pokemon.toLowerCase());
+    }
   }
+
+  useEffect(() => {
+    const handleClick = () => {
+      formRef.current.reset();
+      // Do something when the dropdown is clicked
+    };
+
+    const datalist = formRef.current;
+    datalist.addEventListener("click", handleClick);
+
+    return () => {
+      datalist.removeEventListener("click", handleClick);
+    };
+  }, [formRef]);
 
   function Submit(e) {
     e.preventDefault();
     // console.log(formRef.value); Why doesn't this work?
+
     formRef.current.reset();
 
     setInputName(name);
@@ -174,11 +196,11 @@ function App() {
             />
             <datalist id="drop-down">
               {pokemon.map((p) => (
-                <option
-                  key={p.name}
-                  value={p.name.charAt(0).toUpperCase() + p.name.slice(1)}
-                >
-                  {getPokemonNumber(p.url)}
+                <option key={p.name}>
+                  {getPokemonNumber(p.url) +
+                    ": " +
+                    p.name.charAt(0).toUpperCase() +
+                    p.name.slice(1)}
                 </option>
               ))}
             </datalist>
