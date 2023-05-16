@@ -1,19 +1,21 @@
 {
   "files": {
-    "main.css": "/APP-React-Pokedex/static/css/main.fbfd44f3.css",
-    "main.js": "/APP-React-Pokedex/static/js/main.1171ff64.js",
+    "main.css": "/APP-React-Pokedex/static/css/main.abc98691.css",
+    "main.js": "/APP-React-Pokedex/static/js/main.088a9ebd.js",
     "static/js/787.28cb0dcd.chunk.js": "/APP-React-Pokedex/static/js/787.28cb0dcd.chunk.js",
-    "static/media/holo4.jpg": "/APP-React-Pokedex/static/media/holo4.58737dfc38c6d92d4b45.jpg",
-    "static/media/pokedex-logo.png": "/APP-React-Pokedex/static/media/pokedex-logo.124337e598db8de6392d.png",
-    "static/media/1.png": "/APP-React-Pokedex/static/media/1.961a737abc93a29558b0.png",
-    "static/media/grass.jpg": "/APP-React-Pokedex/static/media/grass.63111b78e081cc48ffcf.jpg",
+    "static/media/holo4.webp": "/APP-React-Pokedex/static/media/holo4.340d3dda41c19895f553.webp",
+    "static/media/pokedex-logo.webp": "/APP-React-Pokedex/static/media/pokedex-logo.cdc1d001d50b89542e8f.webp",
+    "static/media/grass.webp": "/APP-React-Pokedex/static/media/grass.e911d40bf1c6780ef620.webp",
+    "static/media/1.webp": "/APP-React-Pokedex/static/media/1.2f3ecb209c5019fea9ca.webp",
+    "static/media/mute.webp": "/APP-React-Pokedex/static/media/mute.f7d84c6768b8899f5e90.webp",
+    "static/media/unmute.webp": "/APP-React-Pokedex/static/media/unmute.adc80ae9b1f5a08c051e.webp",
     "index.html": "/APP-React-Pokedex/index.html",
-    "main.fbfd44f3.css.map": "/APP-React-Pokedex/static/css/main.fbfd44f3.css.map",
-    "main.1171ff64.js.map": "/APP-React-Pokedex/static/js/main.1171ff64.js.map",
+    "main.abc98691.css.map": "/APP-React-Pokedex/static/css/main.abc98691.css.map",
+    "main.088a9ebd.js.map": "/APP-React-Pokedex/static/js/main.088a9ebd.js.map",
     "787.28cb0dcd.chunk.js.map": "/APP-React-Pokedex/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fbfd44f3.css",
-    "static/js/main.1171ff64.js"
+    "static/css/main.abc98691.css",
+    "static/js/main.088a9ebd.js"
   ]
 }
