@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/APP-React-Pokedex/static/css/main.5ca922a2.css",
-    "main.js": "/APP-React-Pokedex/static/js/main.9d293cde.js",
+    "main.js": "/APP-React-Pokedex/static/js/main.637c89bb.js",
     "static/js/787.28cb0dcd.chunk.js": "/APP-React-Pokedex/static/js/787.28cb0dcd.chunk.js",
     "static/media/holo4.webp": "/APP-React-Pokedex/static/media/holo4.3a054cbf7ea3bfb356db.webp",
     "static/media/pokedex-logo.webp": "/APP-React-Pokedex/static/media/pokedex-logo.cdc1d001d50b89542e8f.webp",
@@ -11,11 +11,11 @@
     "static/media/unmute.webp": "/APP-React-Pokedex/static/media/unmute.adc80ae9b1f5a08c051e.webp",
     "index.html": "/APP-React-Pokedex/index.html",
     "main.5ca922a2.css.map": "/APP-React-Pokedex/static/css/main.5ca922a2.css.map",
-    "main.9d293cde.js.map": "/APP-React-Pokedex/static/js/main.9d293cde.js.map",
+    "main.637c89bb.js.map": "/APP-React-Pokedex/static/js/main.637c89bb.js.map",
     "787.28cb0dcd.chunk.js.map": "/APP-React-Pokedex/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5ca922a2.css",
-    "static/js/main.9d293cde.js"
+    "static/js/main.637c89bb.js"
   ]
 }
