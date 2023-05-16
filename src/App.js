@@ -3,8 +3,8 @@ import "./App.css";
 import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import PokeRow from "./components/PokeRow";
-import bulbasaur from "./assets/1.png";
-import pokedex from "./assets/pokedex-logo.png";
+import bulbasaur from "./assets/1.webp";
+import pokedex from "./assets/pokedex-logo.webp";
 
 function App() {
   const [pokemon, setPokemon] = useState([]);
