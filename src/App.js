@@ -143,6 +143,13 @@ function App() {
     //This function is responsible for calling the API with a page number
   }
 
+  function getPokemonNumber(url) {
+    // Extract the Pokemon number from the end of the URL string
+    const number = url.split("/").slice(-2, -1)[0];
+    // Pad the number with zeroes to have three digits
+    return number;
+  }
+
   return (
     <div className="container">
       <div className="app">
@@ -167,8 +174,11 @@ function App() {
             />
             <datalist id="drop-down">
               {pokemon.map((p) => (
-                <option key={p.name}>
-                  {p.name.charAt(0).toUpperCase() + p.name.slice(1)}
+                <option
+                  key={p.name}
+                  value={p.name.charAt(0).toUpperCase() + p.name.slice(1)}
+                >
+                  {getPokemonNumber(p.url)}
                 </option>
               ))}
             </datalist>
