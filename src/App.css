@@ -29,7 +29,7 @@ header {
 }
 
 .app {
-  background-color: #541494;
+  background-color: #bb2944;
   font-size: calc(1px + 2vmin);
   border: 10px solid black;
   border-radius: 15px;
@@ -58,7 +58,7 @@ header {
   margin: 1rem;
   background-color: #2c2c2c;
   background-image: url("assets/holo4.webp");
-  background-size: 1600px;
+  background-size: 2400px;
   box-shadow: 2px 2px 1px #333;
   animation: wave 55s linear infinite alternate;
 }

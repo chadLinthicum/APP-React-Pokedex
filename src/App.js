@@ -33,6 +33,7 @@ function App() {
 
   const formRef = useRef();
   const lightRef = useRef();
+  const ddRef = useRef();
 
   const fetchData = async (pokemon) => {
     const { data } = await axios.get(pokemon);
@@ -67,21 +68,26 @@ function App() {
       });
   }, [input]);
 
-  function updatePoke(event) {
-    let pokemon = event.target.value;
+  function updatePoke(e) {
+    let pokemon = e.target.value;
     if (pokemon.includes(" ")) {
       const index = pokemon.indexOf(" ");
       setInput(pokemon.toLowerCase().slice(index + 1));
-      event.target.value = pokemon.slice(index + 1);
+      e.target.value = pokemon.slice(index + 1);
     } else {
       setInput(pokemon.toLowerCase());
     }
   }
 
   useEffect(() => {
-    const handleClick = () => {
+    const handleClick = (e) => {
       formRef.current.reset();
-      // Do something when the dropdown is clicked
+
+      if (e.target.value == "") {
+        ddRef.current.focus();
+      } else {
+        ddRef.current.blur();
+      }
     };
 
     const datalist = formRef.current;
@@ -95,11 +101,8 @@ function App() {
   function Submit(e) {
     e.preventDefault();
 
-    const viewport = document.querySelector('meta[name="viewport"]');
-    viewport.setAttribute("content", "width=device-width, initial-scale=0.1");
-    // console.log(formRef.value); Why doesn't this work?
-
     formRef.current.reset();
+    ddRef.current.blur();
 
     setInputName(name);
     setInputSprite(sprite);
@@ -186,7 +189,6 @@ function App() {
             className="volume"
             type="checkbox"
             onChange={toggleSound}
-            autoFocus={false}
           ></input>
         </header>
         <div className="input">
@@ -196,7 +198,8 @@ function App() {
               type="text"
               list="drop-down"
               placeholder=" Who's That Pokemon!?"
-              onChange={(event) => updatePoke(event)}
+              ref={ddRef}
+              onChange={(e) => updatePoke(e)}
             />
             <datalist id="drop-down">
               {pokemon.map((p) => (
