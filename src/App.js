@@ -211,7 +211,9 @@ function App() {
                 </option>
               ))}
             </datalist>
-            <button type="submit">GO!</button>
+            <button id="GO" type="submit">
+              GO!
+            </button>
           </form>
         </div>
         <div className="character">
