@@ -1,21 +1,25 @@
 {
   "files": {
-    "main.css": "/APP-React-Pokedex/static/css/main.550c4576.css",
-    "main.js": "/APP-React-Pokedex/static/js/main.7113cebf.js",
+    "main.css": "/APP-React-Pokedex/static/css/main.db490d50.css",
+    "main.js": "/APP-React-Pokedex/static/js/main.8d83d5f8.js",
     "static/js/787.28cb0dcd.chunk.js": "/APP-React-Pokedex/static/js/787.28cb0dcd.chunk.js",
-    "static/media/holo4.webp": "/APP-React-Pokedex/static/media/holo4.340d3dda41c19895f553.webp",
-    "static/media/pokedex-logo.webp": "/APP-React-Pokedex/static/media/pokedex-logo.cdc1d001d50b89542e8f.webp",
+    "static/media/holo.webp": "/APP-React-Pokedex/static/media/holo.340d3dda41c19895f553.webp",
+    "static/media/pokedexLogo.webp": "/APP-React-Pokedex/static/media/pokedexLogo.5b22fab81cfbe75065c7.webp",
     "static/media/grass.webp": "/APP-React-Pokedex/static/media/grass.e911d40bf1c6780ef620.webp",
+    "static/media/brushedRed.webp": "/APP-React-Pokedex/static/media/brushedRed.658b558d2ab85a9db399.webp",
+    "static/media/brushedGray.webp": "/APP-React-Pokedex/static/media/brushedGray.91986239dea836d00e3f.webp",
     "static/media/1.webp": "/APP-React-Pokedex/static/media/1.2f3ecb209c5019fea9ca.webp",
+    "static/media/brushedCream.webp": "/APP-React-Pokedex/static/media/brushedCream.6b614e83346fbd98d4f6.webp",
     "static/media/mute.webp": "/APP-React-Pokedex/static/media/mute.f7d84c6768b8899f5e90.webp",
+    "static/media/brushedYellow.webp": "/APP-React-Pokedex/static/media/brushedYellow.dfd1dc3fec7f54d7a62d.webp",
     "static/media/unmute.webp": "/APP-React-Pokedex/static/media/unmute.adc80ae9b1f5a08c051e.webp",
     "index.html": "/APP-React-Pokedex/index.html",
-    "main.550c4576.css.map": "/APP-React-Pokedex/static/css/main.550c4576.css.map",
-    "main.7113cebf.js.map": "/APP-React-Pokedex/static/js/main.7113cebf.js.map",
+    "main.db490d50.css.map": "/APP-React-Pokedex/static/css/main.db490d50.css.map",
+    "main.8d83d5f8.js.map": "/APP-React-Pokedex/static/js/main.8d83d5f8.js.map",
     "787.28cb0dcd.chunk.js.map": "/APP-React-Pokedex/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.550c4576.css",
-    "static/js/main.7113cebf.js"
+    "static/css/main.db490d50.css",
+    "static/js/main.8d83d5f8.js"
   ]
 }
