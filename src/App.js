@@ -57,6 +57,7 @@ function App() {
   };
 
   useEffect(() => {
+    document.title = "Chad's Pokédex";
     fetchData("https://pokeapi.co/api/v2/pokemon/" + input);
     axios
       .get("https://pokeapi.co/api/v2/pokemon?limit=151")
