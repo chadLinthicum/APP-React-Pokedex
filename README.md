@@ -1,5 +1,5 @@
 <b>Try In Browser:<b>\
-chadlinthicum.github.io/APP-React-Pokedex/
+https://chadlinthicum.github.io/APP-React-Pokedex
 
 <b>Install:<b>\
 Pull the project down and run `npm start`.
